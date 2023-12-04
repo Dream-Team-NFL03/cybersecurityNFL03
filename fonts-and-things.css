@@ -2,6 +2,10 @@
    font-family: Hedvig;
    src: url(HedvigLettersSans-Regular.ttf);
 }
+@font-face{
+   font-family: Poppins-Light;
+   src: url(Poppins-Light.ttf);
+}
 body {
   background-color: rgb(1, 0, 43);
 }
@@ -11,6 +15,4 @@ h1, h2, h3, h4, h5, h6 {
 }
 p {
    color: white;
-   font-family: Poppins-Light;
-   src: url(Poppins-Light.ttf);
 }
