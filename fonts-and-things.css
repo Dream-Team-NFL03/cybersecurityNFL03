@@ -157,18 +157,6 @@ li a:hover {
     top: 40%;
     left: 40%;
 }
- 
-.button {
-    margin-top: 50px;
-    font-size: 20px;
-    font-family: Poppins-Light;
-    padding: 10px 20px;
-    background-color: #4f98c2;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
- 
 #score {
     font-size: 30px;
     font-family: Hedvig;
