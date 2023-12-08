@@ -1,6 +1,15 @@
 // Questions that will be asked
+startingval = 10;
+const Conversion = [1, 1, 1, 1, 1, 1, 1, 1, 1, 10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 20, 21, 1, 1, 1, 1, 1, 1, 1, 1, 30, 31, 32, 1, 1, 1, 1, 1, 1, 1, 40, 41, 42, 43, 1, 1, 1, 1, 1, 1, 50, 51, 52, 53, 54, 1, 1, 1, 1, 1, 60, 61, 62, 63, 64, 65];
 const Questions = [{
-    q: "Question 1?", 
+    q: "Question 10?", 
+    a: [{ text: "Incorrect", isCorrect: false},
+    { text: "Correct", isCorrect: true}
+    ]
+ 
+},
+{
+    q: "Question 21?", 
     a: [{ text: "Incorrect", isCorrect: false},
     { text: "Correct", isCorrect: true}
     ]
@@ -14,149 +23,137 @@ const Questions = [{
  
 },
 {
-    q: "Question 21", 
+    q: "Question 32?", 
     a: [{ text: "Incorrect", isCorrect: false},
     { text: "Correct", isCorrect: true}
     ]
  
 },
 {
-    q: "Question 300?", 
+    q: "Question 31?", 
     a: [{ text: "Incorrect", isCorrect: false},
     { text: "Correct", isCorrect: true}
     ]
  
 },
 {
-    q: "Question 301?", 
+    q: "Question 30?", 
     a: [{ text: "Incorrect", isCorrect: false},
     { text: "Correct", isCorrect: true}
     ]
  
 },
 {
-    q: "Question 310", 
+    q: "Question 43?", 
     a: [{ text: "Incorrect", isCorrect: false},
     { text: "Correct", isCorrect: true}
     ]
  
 },
 {
-    q: "Question 4000?", 
+    q: "Question 42?", 
     a: [{ text: "Incorrect", isCorrect: false},
     { text: "Correct", isCorrect: true}
     ]
  
 },
 {
-    q: "Question 4001", 
+    q: "Question 41?", 
     a: [{ text: "Incorrect", isCorrect: false},
     { text: "Correct", isCorrect: true}
     ]
  
 },
 {
-    q: "Question 4010?", 
+    q: "Question 40?", 
     a: [{ text: "Incorrect", isCorrect: false},
     { text: "Correct", isCorrect: true}
     ]
  
 },
 {
-    q: "Question 4011?", 
+    q: "Question 54?", 
     a: [{ text: "Incorrect", isCorrect: false},
     { text: "Correct", isCorrect: true}
     ]
  
 },
 {
-    q: "Question 50000?", 
+    q: "Question 53?", 
     a: [{ text: "Incorrect", isCorrect: false},
     { text: "Correct", isCorrect: true}
     ]
  
 },
 {
-    q: "Question 50001?", 
+    q: "Question 52?", 
     a: [{ text: "Incorrect", isCorrect: false},
     { text: "Correct", isCorrect: true}
     ]
  
 },
 {
-    q: "Question 50010", 
+    q: "Question 51?", 
     a: [{ text: "Incorrect", isCorrect: false},
     { text: "Correct", isCorrect: true}
     ]
  
 },
 {
-    q: "Question 50011?", 
+    q: "Question 50?", 
     a: [{ text: "Incorrect", isCorrect: false},
     { text: "Correct", isCorrect: true}
     ]
  
 },
 {
-    q: "Question 50100?", 
+    q: "Question 65?", 
     a: [{ text: "Incorrect", isCorrect: false},
     { text: "Correct", isCorrect: true}
     ]
  
 },
 {
-    q: "Question 600000?", 
+    q: "Question 64", 
     a: [{ text: "Incorrect", isCorrect: false},
     { text: "Correct", isCorrect: true}
     ]
  
 },
 {
-    q: "Question 600001", 
+    q: "Question 63?", 
     a: [{ text: "Incorrect", isCorrect: false},
     { text: "Correct", isCorrect: true}
     ]
  
 },
 {
-    q: "Question 600010?", 
+    q: "Question 62?", 
     a: [{ text: "Incorrect", isCorrect: false},
     { text: "Correct", isCorrect: true}
     ]
  
 },
 {
-    q: "Question 600011?", 
+    q: "Question 61", 
     a: [{ text: "Incorrect", isCorrect: false},
     { text: "Correct", isCorrect: true}
     ]
  
 },
 {
-    q: "Question 600100", 
-    a: [{ text: "Incorrect", isCorrect: false},
-    { text: "Correct", isCorrect: true}
-    ]
- 
-},
-{
-    q: "Question 600101?", 
-    a: [{ text: "Incorrect", isCorrect: false},
-    { text: "Correct", isCorrect: true}
-    ]
- 
-},
-{
-    q: "Question 600110?", 
+    q: "Question 60?", 
     a: [{ text: "Incorrect", isCorrect: false},
     { text: "Correct", isCorrect: true}
     ]
  
 }
 ]
- 
+
 let currQuestion = 0
 let score = 0
+let afjy = 1
+
  
 function loadQues() {
     const question = document.getElementById("ques")
@@ -195,8 +192,8 @@ function nextQuestion() {
 
     // Determine the next question based on the boolean value of isCorrect
     const nextQuestionIndex = Questions[currQuestion].a[selectedAns].isCorrect
-        ? currQuestion + 1  // Go to the next question if the answer is correct
-        : currQuestion + 2; // Skip the next question if the answer is incorrect
+        ? currQuestion + 4  // Go to the next question if the answer is correct
+        : currQuestion + 1; // Skip the next question if the answer is incorrect
 
     if (nextQuestionIndex < Questions.length) {
         currQuestion = nextQuestionIndex;
@@ -207,6 +204,7 @@ function nextQuestion() {
         document.getElementById("btn").remove();
         loadScore();
     }
+    afjy++;
 }
  
 function checkAns() {
