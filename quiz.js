@@ -191,13 +191,20 @@ function loadScore() {
  
  
 function nextQuestion() {
-    if (currQuestion < 5) {
-        currQuestion++;
+    const selectedAns = parseInt(document.querySelector('input[name="answer"]:checked').value);
+
+    // Determine the next question based on the boolean value of isCorrect
+    const nextQuestionIndex = Questions[currQuestion].a[selectedAns].isCorrect
+        ? currQuestion + 1  // Go to the next question if the answer is correct
+        : currQuestion + 2; // Skip the next question if the answer is incorrect
+
+    if (nextQuestionIndex < Questions.length) {
+        currQuestion = nextQuestionIndex;
         loadQues();
     } else {
-        document.getElementById("opt").remove()
-        document.getElementById("ques").remove()
-        document.getElementById("btn").remove()
+        document.getElementById("opt").remove();
+        document.getElementById("ques").remove();
+        document.getElementById("btn").remove();
         loadScore();
     }
 }
