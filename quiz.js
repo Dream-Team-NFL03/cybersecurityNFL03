@@ -1,6 +1,6 @@
 // Questions that will be asked
-startingval = 10;
-const Conversion = [1, 1, 1, 1, 1, 1, 1, 1, 1, 10, 1, 1, 1, 1, 1, 1, 1, 1, 1, 20, 21, 1, 1, 1, 1, 1, 1, 1, 1, 30, 31, 32, 1, 1, 1, 1, 1, 1, 1, 40, 41, 42, 43, 1, 1, 1, 1, 1, 1, 50, 51, 52, 53, 54, 1, 1, 1, 1, 1, 60, 61, 62, 63, 64, 65];
+let startingval = 10;
+const Conversion = [0, "a", "b", "c", "d", "e", "f", "g", "h", "i", 1, "a", "b", "c", "d", "e", "f", "g", "h", "i", 3, 2, "b", "c", "d", "e", "f", "g", "h", "i", 6, 5, 4, "c", "d", "e", "f", "g", "h", "i", 10, 9, 8, 7, "d", "e", "f", "g", "h", "i", 15, 14, 13, 12, 11, "e", "f", "g", "h", "i", 21, 20, 19, 18, 17, 16];
 const Questions = [{
     q: "Question 10?", 
     a: [{ text: "Incorrect", isCorrect: false},
@@ -150,7 +150,6 @@ const Questions = [{
 }
 ]
 
-let currQuestion = 0
 let score = 0
 let afjy = 1
 
@@ -159,7 +158,7 @@ function loadQues() {
     const question = document.getElementById("ques")
     const opt = document.getElementById("opt")
  
-    question.textContent = Questions[currQuestion].q;
+    question.textContent = Questions[Conversion[startingval] - 1].q;
     opt.innerHTML = ""
  
     for (let i = 0; i < 6; i++) {
@@ -171,7 +170,7 @@ function loadQues() {
         choice.name = "answer";
         choice.value = i;
     
-        choiceLabel.textContent = Questions[currQuestion].a[i].text;
+        choiceLabel.textContent = Questions[Conversion[startingval] - 1].a[i].text;
     
         choicesdiv.appendChild(choice);
         choicesdiv.appendChild(choiceLabel);
@@ -191,12 +190,12 @@ function nextQuestion() {
     const selectedAns = parseInt(document.querySelector('input[name="answer"]:checked').value);
 
     // Determine the next question based on the boolean value of isCorrect
-    const nextQuestionIndex = Questions[currQuestion].a[selectedAns].isCorrect
-        ? currQuestion + 4  // Go to the next question if the answer is correct
-        : currQuestion + 1; // Skip the next question if the answer is incorrect
+    const nextQuestionIndex = Questions[Conversion[startingval] - 1].a[selectedAns].isCorrect
+        ? startingval + 11  // Go to the next question if the answer is correct
+        : startingval + 10; // Skip the next question if the answer is incorrect
 
-    if (nextQuestionIndex < Questions.length) {
-        currQuestion = nextQuestionIndex;
+    if (nextQuestionIndex < 60) {
+        startingval = nextQuestionIndex;
         loadQues();
     } else {
         document.getElementById("opt").remove();
@@ -210,7 +209,7 @@ function nextQuestion() {
 function checkAns() {
     const selectedAns = parseInt(document.querySelector('input[name="answer"]:checked').value);
  
-    if (Questions[currQuestion].a[selectedAns].isCorrect) {
+    if (Questions[Conversion[startingval] - 1].a[selectedAns].isCorrect) {
         score++;
         console.log("Correct")
         nextQuestion();
