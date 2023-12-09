@@ -151,8 +151,6 @@ const Questions = [{
 ]
 
 let score = 0
-let afjy = 1
-
  
 function loadQues() {
     const question = document.getElementById("ques")
@@ -181,8 +179,33 @@ function loadQues() {
 loadQues();
  
 function loadScore() {
-    const totalScore = document.getElementById("score")
-    totalScore.textContent = `You scored ${score} out of 5`
+    const totalScore = document.getElementById("score");
+    const resultContainer = document.getElementById("result-container"); // Added result container
+    const resultHeading = document.createElement("h1");
+    const resultParagraph = document.createElement("p");
+    const resultImage = document.createElement("img");
+
+    totalScore.textContent = `You scored ${score} out of 5`;
+
+    // Customize message and image based on the score
+    if (score === 5) {
+        resultHeading.textContent = "Congratulations!";
+        resultParagraph.textContent = "You aced the quiz!";
+        resultImage.src = "sampimg.jpg"; // Replace with the path to your image
+    } else if (score >= 3) {
+        resultHeading.textContent = "Well Done!";
+        resultParagraph.textContent = "You did a great job!";
+        resultImage.src = "sampimg.jpg"; // Replace with the path to your image
+    } else {
+        resultHeading.textContent = "Keep Trying!";
+        resultParagraph.textContent = "You can improve. Keep practicing!";
+        resultImage.src = "sampimg.jpg"; // Replace with the path to your image
+    }
+
+    // Append elements to the result container
+    resultContainer.appendChild(resultHeading);
+    resultContainer.appendChild(resultParagraph);
+    resultContainer.appendChild(resultImage);
 }
  
  
@@ -203,7 +226,6 @@ function nextQuestion() {
         document.getElementById("btn").remove();
         loadScore();
     }
-    afjy++;
 }
  
 function checkAns() {

@@ -127,8 +127,7 @@ li a:hover {
 }
 /* QUIZ SECTION!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 .panel {
-    margin-top: 8%;
-    margin-bottom: 50px;
+    margin: 100px 50px 50px 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -140,7 +139,7 @@ li a:hover {
 }
  
 .question {
-    font-size: 30px;
+    font-size: 40px;
     margin-bottom: 20px;
     font-family: Hedvig;
     font-weight:bold
@@ -166,5 +165,63 @@ li a:hover {
     border-radius: 5px;
     padding: 2px 5px;
     background-image: linear-gradient(90deg, rgb(0, 26, 255), rgb(255, 0, 242));
+    color:black;
+}
+#result-container {
+    text-align: center; /* Center-align the content within the result container */
+    margin-top: 20px;   /* Add some top margin for spacing */
+    margin-bottom: 20px;
+}
+div.scroll-container {
+    background-color: #191919;
+    overflow: auto;
+    white-space: nowrap;
+    padding: 20px 20px 20px 20px;
+    border-radius: 40px;
+  }
+  
+  div.scroll-container img {
+    padding: 5px;
+    border-radius: 40px;
+    background-image: linear-gradient(45deg, rgb(0, 15, 25), rgb(198, 230, 255));
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+/*SCROLL !!!!! !!!!!!!!!!!!!!!*/
+  /* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border-radius: 5px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    width: 10px;
+    background: rgb(140, 255, 0);
+    border-radius: 5px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    width: 10px;
+    background: rgb(200, 255, 60);
+    border-radius: 5px;
+  }
+  blockquote {
+    font-family: Hedvig;
+    font-weight: bold;
+    font-size: 40px;
+    color: #ffffff;
+    padding-left: 100px;
+    width: 70%;
+  }
+  .gradient-text2 {
+    border-radius: 5px;
+    padding: 2px 5px;
+    background-image: linear-gradient(45deg, rgb(0, 255, 26), #4800ff);
     color:black;
 }
