@@ -178,6 +178,7 @@ div.scroll-container {
     white-space: nowrap;
     padding: 20px 20px 20px 20px;
     border-radius: 40px;
+    height: 420px
   }
   
   div.scroll-container img {
@@ -186,6 +187,14 @@ div.scroll-container {
     background-image: linear-gradient(45deg, rgb(0, 15, 25), rgb(198, 230, 255));
     margin-left: 5px;
     margin-right: 5px;
+  }
+  div.scroll-container p {
+    padding: 5px;
+    border-radius: 40px;
+    background-image: linear-gradient(45deg, rgb(0, 15, 25), rgb(198, 230, 255));
+    margin-left: 5px;
+    margin-right: 5px;
+    display: inline;
   }
 /*SCROLL !!!!! !!!!!!!!!!!!!!!*/
   /* width */
@@ -255,3 +264,21 @@ div.scroll-container {
   .tooltip:hover .tooltiptext {
     visibility: visible;
   }
+
+  .piechart { 
+    margin-top: 50px; 
+    display: block;
+    width: 200px; 
+    height: 200px;
+    border-radius: 50%;
+    background-color: red; 
+}
+sup {
+    font-family: Poppins-Light;
+}
+.mingus{
+    font-family: Poppins-Light;
+    margin-left: 50px;
+    color: white;
+    font-size: 14px;
+}
