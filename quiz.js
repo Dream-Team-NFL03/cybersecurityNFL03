@@ -59,64 +59,64 @@ const Questions = [{
 },
 {
     q: "Question 42?",
-    a: [{ text: "Incorrect", isCorrect: false},
-    { text: "Correct", isCorrect: true}
+    a: [{ text: "Meep should focus on maintaining accurate records of his healthcare. He should consider subscribing to antivirus software.", isCorrect: false},
+    { text: "Meep should stay alert on bill, loans, back accounts, and health care insurance payments to ensure there is no suspicious activity. Meep should be prepared to report identify theft.", isCorrect: true}
     ],
     showImage: false, // Add a property to indicate whether to show image
     imagePath: "image1.jpg" // Add the path to the image 
 },
 {
     q: "Question 41?",
-    a: [{ text: "Incorrect", isCorrect: true},
-    { text: "Correct", isCorrect: false}
+    a: [{ text: "File a data breach. Mitigate the sharing of the leaked data. Prevent any more attacks by disconnecting the server until the situation is fully addressed.", isCorrect: true},
+    { text: "Shut the company down. This is the best way to prevent further loss on both sides.", isCorrect: false}
     ],
     showImage: false, // Add a property to indicate whether to show image
     imagePath: "image1.jpg" // Add the path to the image 
 },
 {
     q: "Question 40?",
-    a: [{ text: "Incorrect", isCorrect: false},
-    { text: "Correct", isCorrect: true}
+    a: [{ text: "Hire ethical white hat hackers to counter the damage caused by the black hat hackers. Then, report the damage done to a Federal Agency.", isCorrect: false},
+    { text: "File a data breach. Inform the customers. Follow the disaster recovery plan. Offer the victims of the data breach compensation through free resources and financial compensation.", isCorrect: true}
     ],
     showImage: false, // Add a property to indicate whether to show image
     imagePath: "image1.jpg" // Add the path to the image 
 },
 {
     q: "Question 54?",
-    a: [{ text: "Incorrect", isCorrect: true},
-    { text: "Correct", isCorrect: false}
+    a: [{ text: "Invest in better infrastructure.", isCorrect: true},
+    { text: "Do not interfere with infrastructure that is already performing well.", isCorrect: false}
     ],
     showImage: false, // Add a property to indicate whether to show image
     imagePath: "image1.jpg" // Add the path to the image 
 },
 {
     q: "Question 53?",
-    a: [{ text: "Incorrect", isCorrect: false},
-    { text: "Correct", isCorrect: true}
+    a: [{ text: "Invest in new infrastructure regarding cybersecurity.", isCorrect: false},
+    { text: "Inform customers of the situation, have them update their passwords.", isCorrect: true}
     ],
     showImage: false, // Add a property to indicate whether to show image
     imagePath: "image1.jpg" // Add the path to the image 
 },
 {
     q: "Question 52?",
-    a: [{ text: "Incorrect", isCorrect: true},
-    { text: "Correct", isCorrect: false}
+    a: [{ text: "Make a better disaster improvement plan for the entire company and educate the employees about cybersecurity by having them read this website Security... Is a Tough Topic. (dream-team-nfl03.github.io).", isCorrect: true},
+    { text: "Isolate the server connections to prevent malware such as spyware, worms, and trojans are unable to spread. However, the company’s computers would also become unusable.", isCorrect: false}
     ],
     showImage: false, // Add a property to indicate whether to show image
     imagePath: "image1.jpg" // Add the path to the image 
 },
 {
     q: "Question 51?",
-    a: [{ text: "Incorrect", isCorrect: false},
-    { text: "Correct", isCorrect: true}
+    a: [{ text: "Pay the ransom. Even though the hackers may not return the insensitive data or even ask for a higher ransom.", isCorrect: false},
+    { text: "Refuse to pay the ransom, restore the lost data through a backup.", isCorrect: true}
     ],
     showImage: false, // Add a property to indicate whether to show image
     imagePath: "image1.jpg" // Add the path to the image 
 },
 {
     q: "Question 50?",
-    a: [{ text: "Incorrect", isCorrect: true},
-    { text: "Correct", isCorrect: false}
+    a: [{ text: "Apologize to the customers for the harm caused, file bankruptcy.", isCorrect: true},
+    { text: "Purchase Ransomware as a Service (Raas) software to start making money.", isCorrect: false}
     ],
     showImage: false, // Add a property to indicate whether to show image
     imagePath: "image1.jpg" // Add the path to the image 
@@ -223,17 +223,17 @@ function loadScore() {
     totalScore.textContent = `You scored ${score} out of 5`;
 
     // Customize message and image based on the score
-    if (score === 5) {
-        resultHeading.textContent = "Congratulations!";
-        resultParagraph.textContent = "You aced the quiz!";
+    if (score >= 4) {
+        resultHeading.textContent = "Good job!";
+        resultParagraph.textContent = "Owen's business has prospered with prober cybersecurity tactics.";
         resultImage.src = "sampimg.jpg"; // Replace with the path to your image
     } else if (score >= 3) {
-        resultHeading.textContent = "Well Done!";
-        resultParagraph.textContent = "You did a great job!";
+        resultHeading.textContent = "That was alright.";
+        resultParagraph.textContent = "Owen's business and his employees have had a few issues when their cybersecurity was not managed well.";
         resultImage.src = "sampimg.jpg"; // Replace with the path to your image
     } else {
-        resultHeading.textContent = "Keep Trying!";
-        resultParagraph.textContent = "You can improve. Keep practicing!";
+        resultHeading.textContent = "Oh no.";
+        resultParagraph.textContent = "YOwen's business has suffered because of poor cybersecurity management.";
         resultImage.src = "sampimg.jpg"; // Replace with the path to your image
     }
 
